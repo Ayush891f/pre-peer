@@ -42,33 +42,35 @@ const HomePage = () => {
         </div>
 
         {/* image section */}
-       <div className="w-full flex justify-center mt-10 relative group">
-  <div className="relative rounded-2xl overflow-hidden shadow-2xl transition-all duration-700 border-4 border-cyan-400 group-hover:shadow-[0_0_50px_15px_rgba(0,255,255,0.4)] group-hover:scale-105 group-hover:rotate-1">
-
+  {/* Responsive Image Section */}
+<div className="w-full flex flex-col items-center mt-10 px-4">
+  <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-cyan-400 transition-transform duration-700 hover:scale-105 hover:rotate-1 max-w-full sm:max-w-xl md:max-w-3xl">
     <img
       src="/assets/img/hero.jpg"
       alt="Hero"
-      className="w-[90vw] max-w-5xl h-auto object-cover opacity-90 transition-all duration-700 ease-in-out group-hover:brightness-110 group-hover:saturate-150"
+      className="w-full h-auto object-cover opacity-90 transition-all duration-700 ease-in-out hover:brightness-110 hover:saturate-150"
     />
-
-    {/* Copilot Tag */}
     <div className="absolute top-4 left-4 px-4 py-2 rounded-md bg-white/30 backdrop-blur-lg text-black font-semibold shadow-md">
       Interview Copilot&copy;
     </div>
+  </div>
 
-    {/* Developer Button Inside Image */}
-    <div className="absolute bottom-6 right-6 w-80 px-6 py-6 rounded-xl bg-gradient-to-br from-black/50 to-gray-900/60 backdrop-blur-lg shadow-xl transition-all duration-700 transform group-hover:scale-105 group-hover:-rotate-1">
-      <h2 className="text-white font-semibold text-lg tracking-wide">Developer</h2>
-      <p className="text-sm text-gray-300 mt-2 leading-relaxed">
-        Let AI analyze your responses and offer smart feedback to elevate your next interview.
-      </p>
-
-      <Button className="mt-4 bg-purple-600 hover:bg-pink-700 transition-all duration-500 ease-in-out transform hover:scale-110 hover:shadow-[0_0_20px_6px_rgba(255,0,144,0.5)]">
-        Generate <Sparkles className="ml-2" />
-      </Button>
+  {/* CTA Below Image (shown only when viewport ≥ 662px) */}
+  <div className="cta-below w-full max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-4xl bg-gradient-to-br from-black/60 to-gray-900/60 backdrop-blur-lg rounded-2xl p-6 sm:p-8 shadow-2xl mt-8 transition-transform duration-700 hover:scale-105">
+    <h2 className="text-white text-lg font-semibold text-center">Developer</h2>
+    <p className="text-gray-300 text-sm sm:text-base mt-2 leading-relaxed text-center">
+      Let AI analyze your responses and offer smart feedback to elevate your next interview.
+    </p>
+    <div className="mt-4 flex justify-center">
+      <Link to="/generate" className="w-full sm:w-auto">
+        <Button className="w-full sm:w-48 bg-purple-600 hover:bg-pink-700 transition-transform duration-500 ease-in-out transform hover:scale-110">
+          Generate <Sparkles className="ml-2 text-sm sm:text-base" />
+        </Button>
+      </Link>
     </div>
   </div>
 </div>
+
 
       </Container>
 

@@ -1,5 +1,18 @@
 {
   "projects": {
-    "default": "ai-mock-interview-yt-react-ts"
-  }
+    "default": "pre-peer",
+    "pre-peer": "pre-peer",
+    "prod": "pre-peer",
+    "pro": "pre-peer"
+  },
+  "targets": {
+    "pre-peer": {
+      "hosting": {
+        "pro": [
+          "pre-peer"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }

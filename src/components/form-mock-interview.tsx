@@ -203,11 +203,21 @@ export const FormMockInterview = ({ initialData }: FormMockInterviewProps) => {
         <Headings title={title} isSubHeading />
 
         {initialData && (
-          <Button size={"icon"} variant={"ghost"} onClick={handleDelete} disabled={loading}>
+          <Button
+  size="icon"
+  variant="ghost"
+  onClick={handleDelete}
+  disabled={loading}
+  className="p-2 sm:p-3 md:p-4 transition-shadow duration-200 
+             hover:shadow-lg active:shadow-md disabled:opacity-50"
+>
   {loading ? (
-    <Loader className="min-w-4 min-h-4 animate-spin text-red-500" />
+    <Loader className="min-w-[1rem] min-h-[1rem] text-red-500 animate-spin" />
   ) : (
-    <Trash2 className="min-w-4 min-h-4 text-red-500" />
+    <>
+      <Trash2 className="min-w-[1rem] min-h-[1rem] sm:min-w-5 sm:min-h-5" />
+      <span className="ml-2 hidden sm:inline text-sm md:text-base">Delete</span>
+    </>
   )}
 </Button>
         )}

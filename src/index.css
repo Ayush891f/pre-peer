@@ -101,4 +101,15 @@
 .animate-slideInRight {
   animation: slideInRight 0.8s ease-out forwards;
 }
+/* Trigger layout change at 662px */
+@media (min-width: 662px) {
+  :root {
+    --cta-position: below;
+  }
+}
+@media (max-width: 661px) {
+  :root {
+    --cta-position: inside;
+  }
+}
 
