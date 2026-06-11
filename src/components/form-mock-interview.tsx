@@ -55,7 +55,7 @@ export const FormMockInterview = ({ initialData }: FormMockInterviewProps) => {
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
     defaultValues: initialData || {},
-  });
+  }); 
 
   const { isValid, isSubmitting } = form.formState;
   const [loading, setLoading] = useState(false);
@@ -133,9 +133,17 @@ export const FormMockInterview = ({ initialData }: FormMockInterviewProps) => {
         `;
 
     const aiResult = await chatSession.sendMessage(prompt);
-    const cleanedResponse = cleanAiResponse(aiResult.response.text());
+    const rawText = aiResult?.response?.text?.();
+    // surface raw AI response in console to diagnose parsing issues
+    console.debug("AI raw response:", rawText);
 
-    return cleanedResponse;
+    try {
+      const cleanedResponse = cleanAiResponse(rawText);
+      return cleanedResponse;
+    } catch (err) {
+      console.error("Failed to parse AI response:", rawText, err);
+      throw err;
+    }
   };
 
   const onSubmit = async (data: FormData) => {

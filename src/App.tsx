@@ -21,7 +21,7 @@ const App = () => {
       <Routes>
         {/* public routes */}
         <Route element={<PublicLayout />}>
-          <Route index element={<HomePage />} />
+          <Route index element={<HomePage />} /> 
         </Route>
 
         {/* authentication layout */}

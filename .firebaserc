@@ -3,12 +3,13 @@
     "default": "pre-peer",
     "pre-peer": "pre-peer",
     "prod": "pre-peer",
-    "pro": "pre-peer"
+    "pro": "pre-peer",
+    "pre": "pre-peer"
   },
   "targets": {
     "pre-peer": {
       "hosting": {
-        "pro": [
+        "pre": [
           "pre-peer"
         ]
       }

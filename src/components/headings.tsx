@@ -11,7 +11,7 @@ export const Headings = ({
   description,
   isSubHeading = false,
 }: HeadingsProps) => {
-  return (
+  return ( 
     <div>
       <h2
         className={cn(
